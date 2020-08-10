@@ -1,0 +1,27 @@
+<section>
+    <h2>Se vores nyheder</h2>
+    <div class="news" *ngIf="news">
+        <article *ngFor="let item of news | slice:0:3">
+            <figure>
+                <img src="{{item.image}}" alt="News image">
+            </figure>
+            <h3>{{item.title}}</h3>
+
+            <p>{{item.teaser}}</p>
+        </article>
+    </div>
+</section>
+
+<section>
+    <h2>Se udvalgte værelser</h2>
+    <div class="rooms" *ngIf="rooms">
+        <article *ngFor="let item of rooms">
+            <figure>
+                <img *ngIf="item.images" src="{{item.images[0].image}}" alt="News image">
+            </figure>
+            <h3>{{item.title}}</h3>
+
+            <p>{{item.description}}</p>
+        </article>
+    </div>
+</section>

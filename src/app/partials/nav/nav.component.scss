@@ -1,0 +1,113 @@
+// =====================
+// =========Nav=========
+// =====================
+nav {
+    background-color: #000;
+
+    .desktop {
+        width: 60%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 20% 1fr;
+        align-items: center;
+        justify-content: center;
+
+        @media(max-width: 1000px) {
+            display: none;
+        }
+
+        figure {
+            width: 100%;
+            cursor: pointer;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        ul {
+            justify-self: end;
+            display: flex;
+
+            li {
+                color: white;
+                list-style: none;
+                padding: 1em;
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                    transition: color 200ms ease-in-out;
+
+                    &:hover {
+                        color: #ff0000;
+                    }
+                }
+            }
+        }
+    }
+
+    .mobile {
+        position: relative;
+        position: grid;
+
+        @media(min-width: 1000px) {
+            display: none;
+        }
+
+        figure {
+            width: 60%;
+            margin: 0 auto;
+
+            img {
+                text-align: center;
+                width: 100%;
+            }
+        }
+
+        span {
+            position: absolute;
+            top: 1em;
+            right: 1em;
+            z-index: 10;
+            color: white;
+            font-size: 1.4em;
+            cursor: pointer;
+
+            i {
+                fill: white;
+            }
+        }
+
+        ul {
+            position: fixed;
+            width: 100%;
+            background-color: #000;
+            text-align: end;
+            transform: translateX(110%);
+            transition: transform 400ms ease-in-out;
+
+            li {
+                list-style: none;
+
+                a {
+                    display: block;
+                    padding: 1em;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .open {
+        ul {
+            transform: translateX(0) !important;
+
+        }
+    }
+}
+
+// =====================
+// =======Content=======
+// =====================

@@ -1,0 +1,25 @@
+.countrys {
+    display: flex;
+    justify-content: center;
+
+    a {
+        background-color: none;
+        border: none;
+        padding: 1em;
+        margin: 0 1em;
+        cursor: pointer;
+    }
+}
+
+.citys {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    figure {
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+}

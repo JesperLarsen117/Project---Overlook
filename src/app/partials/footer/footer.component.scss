@@ -1,0 +1,43 @@
+footer {
+    background-color: #fff;
+
+    section {
+        display: grid;
+        grid-template-columns: 1fr 10% 1fr;
+        align-items: center;
+        width: 60%;
+        margin: 0 auto;
+        padding: 1em 0;
+
+        p {
+            justify-self: start;
+            color: #373535;
+            opacity: .5;
+            font-size: 0.8em;
+        }
+
+        .social {
+            justify-self: center;
+            color: #373535;
+            opacity: .5;
+            font-size: 1.5em;
+            margin: .2em;
+        }
+
+        ul {
+            justify-self: end;
+            display: flex;
+
+            li {
+                list-style: none;
+
+                a {
+                    padding: 0 .5em;
+                    color: #373535;
+                    opacity: .5;
+                    font-size: 0.8em;
+                }
+            }
+        }
+    }
+}

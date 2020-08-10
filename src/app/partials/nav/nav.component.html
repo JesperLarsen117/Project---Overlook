@@ -1,0 +1,35 @@
+<nav>
+    <!-- Desktop navigation -->
+    <div class="desktop">
+        <figure routerLink="/">
+            <img src="../../../assets/svg/hotel-overlook-logo.svg" alt="Hotel overlook logo">
+        </figure>
+        <ul>
+            <li><a routerLink="/">Forside</a></li>
+            <li>|</li>
+            <li><a routerLink="hotels">Hoteller og destinationer</a></li>
+            <li>|</li>
+            <li><a routerLink="#">Værelser</a></li>
+            <li>|</li>
+            <li><a routerLink="#">Reservationer</a></li>
+            <li>|</li>
+            <li><a routerLink="#">Login</a></li>
+        </ul>
+    </div>
+    <!-- Mobile navigation -->
+    <div class="mobile">
+        <figure>
+            <img src="../../../assets/svg/hotel-overlook-logo.svg" alt="Hotel overlook logo">
+        </figure>
+        <span (click)="openMenu()">
+            <i class="fas fa-bars"></i>
+        </span>
+        <ul>
+            <li><a routerLink="/">Forside</a></li>
+            <li><a routerLink="#">Hoteller og destinationer</a></li>
+            <li><a routerLink="#">Værelser</a></li>
+            <li><a routerLink="#">Reservationer</a></li>
+            <li><a routerLink="#">Login</a></li>
+        </ul>
+    </div>
+</nav>
