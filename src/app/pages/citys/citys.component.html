@@ -1,0 +1,45 @@
+<section class="header" *ngIf="city">
+    <figure>
+        <img draggable="false" src="{{city.image}}" alt="">
+    </figure>
+</section>
+
+<main>
+    <section class="countrys" *ngIf="countrys">
+        <a class="filterBtn" *ngFor="let item of countrys"
+            [class.active]="this.activeCountry === (item.name).toLowerCase()"
+            routerLink="/hotels/{{(item.name).toLowerCase()}}">{{item.name}}</a>
+    </section>
+    <section class="container">
+        <section class="left">
+            <ul class="bread" *ngIf="city">
+                <li><a routerLink="/">Hotel Overlook</a></li>
+                <li><span>></span></li>
+                <li><a routerLink="/hotels">Hoteller og destination</a></li>
+                <li><span>></span></li>
+                <li><a routerLink="/hotels/{{(city.country_name).toLowerCase()}}">{{city.country_name}}</a></li>
+                <li><span>></span></li>
+                <li>
+                    <p>{{city.name}}</p>
+                </li>
+            </ul>
+            <h2>Vores hoteller i {{city.name}}</h2>
+            <p class="descript">{{city.description}}</p>
+            <section class="citys" *ngIf="hotels">
+                <article *ngFor="let item of hotels" routerLink="{{item.id}}">
+                    <figure>
+                        <img src="{{item.image}}" alt="hotel image">
+                    </figure>
+                    <h3>{{item.title}}</h3>
+                    <p>{{item.teaser}}</p>
+                </article>
+            </section>
+        </section>
+        <section class="right" *ngIf="city">
+            <p>Se andre byer i {{city.name}}</p>
+            <article *ngFor="let item of citys">
+                <a (click)="navToCountry(item.id)">{{item.name}}</a>
+            </article>
+        </section>
+    </section>
+</main>

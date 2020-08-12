@@ -63,28 +63,12 @@ main {
         }
     }
 
-
-
     .bread {
-     display: flex;
-
-     li {
-         list-style: none;
-
-         a {
-             color: #373535;
-             text-decoration: none;
-         }
-
-         span {
-             margin: 0 .5em;
-         }
-
-         p {
-             color: #373535;
-         }
-     }
- }
+        span {
+            display: inline-block;
+            margin: 0 .2em;
+        }
+    }
 
     .container {
         display: grid;
@@ -93,6 +77,27 @@ main {
         margin-bottom: 2em;
 
         .left {
+            .bread {
+                display: flex;
+
+                li {
+                    list-style: none;
+
+                    a {
+                        color: #373535;
+                        text-decoration: none;
+                    }
+
+                    span {
+                        margin: 0 .5em;
+                    }
+
+                    p {
+                        color: #373535;
+                    }
+                }
+            }
+
             a {
                 color: #373535;
                 text-decoration: none;
@@ -109,8 +114,6 @@ main {
                 border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
             }
 
-
-
             // Citys
             .citys {
                 display: grid;
@@ -118,15 +121,9 @@ main {
                 gap: 1em;
                 margin-top: 1em;
 
-
-                article {
-                    cursor: pointer;
-
-                }
-
-
                 figure {
                     width: 100%;
+                    cursor: pointer;
 
                     img {
                         border-radius: 4px;
@@ -159,6 +156,13 @@ main {
         .right {
             border-left: 1px solid rgba(0, 0, 0, 0.2);
             padding-left: 2em;
+
+            a {
+                color: #6a6af9;
+                cursor: pointer;
+                margin: 1em 0;
+                display: block;
+            }
 
             figure {
                 width: 80%;

@@ -12,6 +12,7 @@ export class FrontPageComponent implements OnInit {
   constructor(private http: HttpService) { }
 
   async ngOnInit(): Promise<void> {
+
     this.news = await this.http.getNews().toPromise();
     this.news = this.news.items;
     this.rooms = [await this.http.getRoom(2).toPromise(), await this.http.getRoom(3).toPromise(), await this.http.getRoom(4).toPromise()];
@@ -20,5 +21,4 @@ export class FrontPageComponent implements OnInit {
 
 
   }
-
 }

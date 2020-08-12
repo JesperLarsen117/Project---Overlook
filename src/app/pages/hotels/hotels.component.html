@@ -1,20 +1,45 @@
-<section class="countrys" *ngIf="countrys">
-    <a *ngFor="let item of countrys" (click)="filter(item.id)">{{item.name}}</a>
+<section class="header" *ngIf="country">
+    <figure>
+        <img draggable="false" src="{{country.image}}" alt="">
+    </figure>
 </section>
 
-<section>
-    <article *ngIf="country">
-        <h2>Vores hoteller i {{country.name}}</h2>
-        <p>{{country.description}}</p>
-    </article>
-</section>
-
-<section class="citys" *ngIf="hotels">
-    <article *ngFor="let item of citys">
-        <figure>
-            <img src="{{item.image}}" alt="hotel image">
-        </figure>
-        <h3>{{item.name}}</h3>
-        <p>{{item.description}}</p>
-    </article>
-</section>
+<main>
+    <section class="countrys" *ngIf="countrys">
+        <a class="filterBtn" *ngFor="let item of countrys"
+            [class.active]="this.activeCountry === (item.name).toLowerCase()" (click)="filter(item.id)"
+            routerLink="/hotels/{{(item.name).toLowerCase()}}">{{item.name}}</a>
+    </section>
+    <section class="container">
+        <section class="left">
+            <article *ngIf="country">
+                <ul class="bread">
+                    <li><a routerLink="/">Hotel Overlook</a></li>
+                    <li><span>></span></li>
+                    <li><a routerLink="/hotels">Hoteller og destination</a></li>
+                    <li><span>></span></li>
+                    <li>
+                        <p>{{country.name}}</p>
+                    </li>
+                </ul>
+                <h2>Vores hoteller i {{country.name}}</h2>
+                <p class="descript">{{country.description}}</p>
+            </article>
+            <section class="citys" *ngIf="hotels">
+                <article *ngFor="let item of citys" routerLink="{{item.id}}">
+                    <figure>
+                        <img src="{{item.image}}" alt="hotel image">
+                    </figure>
+                    <h3>{{item.name}}</h3>
+                    <p>{{item.description}}</p>
+                </article>
+            </section>
+        </section>
+        <section class="right" *ngIf="country">
+            <p>Kort over {{country.name}}</p>
+            <figure>
+                <img src="../../../assets/images/countrys/{{country.name}}.JPG" alt="{{country.name}}">
+            </figure>
+        </section>
+    </section>
+</main>

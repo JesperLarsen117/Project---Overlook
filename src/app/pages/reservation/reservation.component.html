@@ -1,1 +1,105 @@
-<p>reservation works!</p>
+<section class="header">
+    <figure>
+        <img draggable="false" src="../../../assets/images/overlook-seurahuone.jpg" alt="header image">
+    </figure>
+</section>
+
+<main>
+    <ul class="bread">
+        <li><a routerLink="/">Hotel Overlook</a></li>
+        <li><span>></span></li>
+        <li><a routerLink="/resevation">Reservation</a></li>
+        <li><span>></span></li>
+        <li>
+            <p>Reserver dit foretrukne værelse</p>
+        </li>
+    </ul>
+    <section class="pageContainer">
+        <div class="left">
+            <header class="formHeader">
+                <h2>Reserver dit foretrukne værelse</h2>
+                <p>Her kan du vælge destination, hotel og værelsestype og gennemføre din Overlook booking. </p>
+            </header>
+            <form>
+                <label for="hotel">Destination/Hotel: <span class="importent">*</span></label>
+                <input type="text" placeholder="Over Grand Hotel">
+                <div class="roomTypeContainer">
+                    <label for="roomType">Værelsestype: <span class="importent">*</span></label>
+                    <label for="people"> Antal personer: <span class="importent">*</span></label>
+                    <select name="roomType" id="roomType">
+                        <option value="Superior">Superior Plus</option>
+                    </select>
+                    <select name="roomType" id="roomType">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <label for="priceClass">Pris klasse:</label>
+                <div class="priceClassContainer">
+                    <div>
+                        <input type="radio" name="priceClass" value="1" id="priceClass">
+                        <p>Normal pris</p>
+                    </div>
+                    <div>
+                        <input type="radio" name="priceClass" value="2" id="priceClass">
+                        <p>Flex Pris</p>
+                    </div>
+                </div>
+                <div class="dateContainer">
+                    <label for="checkInDate">Check-in dato: <span class="importent">*</span></label>
+                    <label for="checkOutDate">Check-ud dato: <span class="importent">*</span></label>
+
+                    <input type="date" id="start" name="trip-start" value="2020-08-12" min="2020-01-01"
+                        max="2021-12-31">
+                    <input type="date" id="start" name="trip-start" value="2020-08-12" min="2020-01-01"
+                        max="2021-12-31">
+                    <label for="surName">Fornavn: <span class="importent">*</span></label>
+                    <label for="lastName">Efternavn: <span class="importent">*</span></label>
+                    <input type="text" placeholder="Indtast dit fornavn">
+                    <input type="text" placeholder="Indtast dit efternavn">
+                </div>
+                <label for="phone">Telefon: <span class="importent">*</span></label>
+                <input type="text" placeholder="Indtast dit telefornummer">
+                <label for="comment">Eventuelle anmodninger eller kommentarer:</label>
+                <textarea name="comment" id="comment"></textarea>
+
+                <div class="acceptContainer">
+                    <input type="checkbox" name="accept" id="accept">
+                    <label class="acceptLabel" for="checkbox">Jeg accepterer hermed Overlooks betingelser (Sæt
+                        kryds).</label>
+                </div>
+
+                <button type="button">Send reservation</button>
+                <!-- <button type="button">Annuller</button> -->
+            </form>
+        </div>
+        <div class="right">
+            <h2>Betingelser</h2>
+
+            <ul>
+                <li><span><i class="fas fa-check"></i></span>
+                    <p>Reduceret pris - spar op til 25%.</p>
+                </li>
+                <li><span><i class="fas fa-check"></i></span>
+                    <p>Kan kun bookes online via Overlook website og app.</p>
+                </li>
+                <li><span><i class="fas fa-check"></i></span>
+                    <p>Bestil helt op til og med ankomstdagen.</p>
+                </li>
+                <li><span><i class="fas fa-check"></i></span>
+                    <p>Bookinger tilbagebetales ikke og kan ikke ændres eller
+                        annulleres.</p>
+                </li>
+                <li><span><i class="fas fa-check"></i></span>
+                    <p>Beløbet debiteres kreditkort på reservationstidspunktet.</p>
+                </li>
+                <li><span><i class="fas fa-check"></i></span>
+                    <p>Morgenmad er inkluderet.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+</main>

@@ -15,6 +15,9 @@ import { ReservationComponent } from './pages/reservation/reservation.component'
 import { LoginComponent } from './pages/login/login.component';
 import { AboutComponent } from './pages/about/about.component';
 import { HeaderImageHandlerComponent } from './partials/header-image-handler/header-image-handler.component';
+import { CitysComponent } from './pages/citys/citys.component';
+import { SearchComponent } from './partials/search/search.component';
+import { HotelComponent } from './pages/citys/hotel/hotel.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { HeaderImageHandlerComponent } from './partials/header-image-handler/hea
     LoginComponent,
     AboutComponent,
     HeaderImageHandlerComponent,
+    CitysComponent,
+    SearchComponent,
+    HotelComponent,
   ],
   imports: [
     BrowserModule,

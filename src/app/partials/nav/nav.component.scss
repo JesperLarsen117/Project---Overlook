@@ -2,10 +2,12 @@
 // =========Nav=========
 // =====================
 nav {
+    position: relative;
     background-color: #000;
+    z-index: 10;
 
     .desktop {
-        width: 60%;
+        width: 80%;
         margin: 0 auto;
         display: grid;
         grid-template-columns: 20% 1fr;

@@ -1,0 +1,41 @@
+<section class="search">
+    <div class="searchInfoText">
+        <h2>Find dit værelse</h2>
+        <p>Hvor vil du hen og hvornår vil du det?</p>
+    </div>
+    <form>
+        <div>
+            <label for="destination">Destination:</label>
+            <select name="destination" id="destination">
+                <option selected disabled hidden>Vælg destination</option>
+                <option value="danmark">Danmark</option>
+                <option value="sverige">Sverige</option>
+                <option value="finland">Finland</option>
+                <option value="norge">Norge</option>
+                <option value="tyskland">Tyskland</option>
+                <option value="polen">Polen</option>
+                <option value="island">Island</option>
+            </select>
+        </div>
+        <div>
+            <label for="checkInLabel">Check-in: </label>
+            <input type="date" id="start" name="trip-start" value="2020-08-12" min="2020-01-01" max="2021-12-31">
+        </div>
+        <div>
+            <label for="checkOutLabel">Check-ud: </label>
+            <input type="date" id="end" name="trip-end" value="2020-08-12" min="2020-01-01" max="2021-12-31">
+        </div>
+        <div>
+            <label for="people">Antal personer:</label>
+            <select name="people" id="people">
+                <option selected disabled hidden>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <button type="button">Søg</button>
+    </form>
+</section>

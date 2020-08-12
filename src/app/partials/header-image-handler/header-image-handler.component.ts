@@ -13,22 +13,9 @@ export class HeaderImageHandlerComponent implements OnInit {
 
   ngOnInit(): void {
     const path = '../../../assets/images/';
-    this.router.events.subscribe((ev) => {
-      if (ev instanceof NavigationEnd) {
-        switch (this.router.url) {
-          case '/forside':
-            this.images = [path + 'frankfurt-skyline-germany.jpg',
-            path + 'gdansk-center-church-poland.jpg',
-            path + 'harbour-gothenburg.jpg'];
-            break;
-          case '/hotels':
-            this.images = [path + 'seljalandvoss-iceland.jpg'];
-            break;
-          default:
-            break;
-        }
-      }
-    });
+    this.images = [path + 'frankfurt-skyline-germany.jpg',
+    path + 'gdansk-center-church-poland.jpg',
+    path + 'harbour-gothenburg.jpg'];
   }
   next() {
     const width = window.innerWidth;
