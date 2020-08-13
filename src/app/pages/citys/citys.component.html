@@ -11,13 +11,14 @@
             routerLink="/hotels/{{(item.name).toLowerCase()}}">{{item.name}}</a>
     </section>
     <section class="container">
-        <section class="left">
-            <ul class="bread" *ngIf="city">
+        <section class="left" *ngIf="city">
+            <ul class="bread">
                 <li><a routerLink="/">Hotel Overlook</a></li>
                 <li><span>></span></li>
                 <li><a routerLink="/hotels">Hoteller og destination</a></li>
                 <li><span>></span></li>
-                <li><a routerLink="/hotels/{{(city.country_name).toLowerCase()}}">{{city.country_name}}</a></li>
+                <li><a routerLink="/hotels/{{(city.country_name).toLowerCase()}}">{{city.country_name}}</a>
+                </li>
                 <li><span>></span></li>
                 <li>
                     <p>{{city.name}}</p>
