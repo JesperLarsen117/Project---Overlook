@@ -29,5 +29,16 @@ export class HttpService {
   gethotels(id: number) {
     return this.http.get(`https://api.mediehuset.net/overlook/hotels/by_city/${id}`);
   }
-
+  getLogin(loginInfo) {
+    return this.http.post('https://api.mediehuset.net/token', loginInfo);
+  }
+  submitResevation(formData, header) {
+    return this.http.post('https://api.mediehuset.net/overlook/reservations', formData, header);
+  }
+  getResevation(id, header) {
+    return this.http.get(`https://api.mediehuset.net/overlook/reservations/list_by_user/${id}`, header);
+  }
+  deleteResevation(id, header) {
+    return this.http.delete(`https://api.mediehuset.net/overlook/reservations/${id}`, header);
+  }
 }

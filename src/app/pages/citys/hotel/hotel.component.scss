@@ -116,6 +116,43 @@ main {
                     }
                 }
 
+                .smallImages {
+                    display: none;
+                }
+
+                .facilitiesContainer {
+                    display: none;
+                }
+
+                .normalContainer {
+                    h4 {
+                        display: none;
+                    }
+
+                    .change {
+                        display: none;
+
+                    }
+
+                    button {
+                        display: none;
+                    }
+                }
+
+                .flexContainer {
+                    display: none;
+
+                    h4 {
+                        display: none;
+                    }
+
+                    div {
+                        button {
+                            display: none;
+                        }
+                    }
+                }
+
                 div {
                     width: 90%;
 
@@ -133,9 +170,32 @@ main {
                     }
                 }
 
-                #ShowMore {
+                .booking {
                     grid-column: 1 / span 2;
 
+                    .normalContainer {
+                        div {
+                            transform: translateY(-2em);
+                            display: inline-block;
+                            text-align: right;
+                            color: red;
+
+                            .from {
+                                font-weight: bold;
+                                font-size: 1.2em;
+                            }
+
+                            .price {
+                                font-weight: bold;
+                                font-size: 1.2em;
+                            }
+                        }
+                    }
+                }
+
+
+                #ShowMore {
+                    grid-column: 1 / span 2;
                     background: none;
                     border: none;
                     color: #959595;
@@ -201,20 +261,72 @@ main {
                 .description {
                     margin: 1em 0;
                 }
-                .bedTypes {
-                    
+
+                .facilitiesHeader {
+                    margin: 1em 0;
                 }
+
+                .booking {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1em;
+
+                    section {
+                        padding: 1em;
+                        background-color: #ebebeb;
+
+                        div {
+                            display: flex;
+
+                            p {
+                                .price {
+                                    font-size: 1.5em;
+                                    font-weight: bold;
+                                }
+
+                                .from {
+                                    display: none;
+                                }
+                            }
+
+                            button {
+                                margin-left: auto;
+                                background: linear-gradient(0deg, rgba(255, 0, 0, 1) 0%, rgba(236, 0, 0, 1) 100%);
+                                padding: .7em 3em;
+                                border-radius: 4px;
+                                color: white;
+                                border: none;
+                                box-shadow: 0 2px 0 #810a0a;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+
+                .facilities {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    gap: 1em;
+                    margin-bottom: 1em;
+
+                    p {
+                        span {
+                            color: green;
+                            font-size: 1.2em;
+                            margin-right: 1em;
+                        }
+                    }
+                }
+
                 #ShowMore {
                     grid-column: 1 / span 2;
-
+                    width: 100%;
                     background: none;
                     border: none;
                     color: #959595;
-                    width: 40%;
                     margin: 0 auto;
                     cursor: pointer;
                 }
-
             }
         }
     }

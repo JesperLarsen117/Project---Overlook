@@ -1,1 +1,37 @@
-<p>login works!</p>
+<section class="header">
+    <figure>
+        <img draggable="false" src="../../../assets/images/overlook-victoria.jpg" alt="">
+    </figure>
+</section>
+<main>
+    <section class="container">
+        <article class="left">
+            <ul class="bread">
+                <li><a routerLink="/">Hotel Overlook</a></li>
+                <li><span>></span></li>
+                <li>
+                    <p>Login</p>
+                </li>
+            </ul>
+            <header>
+                <h2>Login</h2>
+                <p class="descript">Her kan du logge ind og administrer dine reservationer.</p>
+            </header>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="on">
+                <label for="username">Brugernavn: <span>*</span></label>
+                <input type="text" autocomplete="username" placeholder="Indtast dit brugernavn"
+                    formControlName="username">
+                <label for="password">Adgangskode: <span>*</span></label>
+                <input type="password" autocomplete="current-password" placeholder="Indtast din adgangskode"
+                    formControlName="password">
+                <button type="submit">Login</button>
+                <button>Annuller</button>
+            </form>
+        </article>
+        <article class="right">
+            <h4>Problem med login?</h4>
+            <a href="#">Glemt adgangskode?</a>
+            <a href="#">Opret bruger</a>
+        </article>
+    </section>
+</main>

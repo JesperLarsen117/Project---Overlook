@@ -11,6 +11,7 @@ export class HotelComponent implements OnInit {
   hotel: any;
   id = this.route.snapshot.params.hotelId
   rooms: any;
+  room: any = [];
   roomPicture = [];
   city: any;
   activeCountry: string;
@@ -34,16 +35,42 @@ export class HotelComponent implements OnInit {
 
     this.activeCountry = this.city.country_name.toLowerCase();
 
-
     this.rooms.forEach(item => {
       this.roomPicture.push(item.images[0].image);
     });
     console.log(this.roomPicture);
+
+
+
+    let room1: any = await this.http.getRoom(1).toPromise()
+    room1 = room1.item
+    let room2: any = await this.http.getRoom(2).toPromise()
+    room2 = room2.item
+    let room3: any = await this.http.getRoom(3).toPromise()
+    room3 = room3.item
+    let room4: any = await this.http.getRoom(4).toPromise()
+    room4 = room4.item
+    let room5: any = await this.http.getRoom(5).toPromise()
+    room5 = room5.item
+    let room6: any = await this.http.getRoom(6).toPromise()
+    room6 = room6.item
+    let room7: any = await this.http.getRoom(7).toPromise()
+    room7 = room7.item
+
+    this.room.push(room1, room2, room3, room4, room5, room6, room7);
+    console.log(this.room);
   }
 
   expand(ev) {
     console.dir(ev.currentTarget.parentNode.children);
     const parrent = ev.currentTarget.parentNode as HTMLElement;
-    parrent.classList.toggle('open')
+    // parrent.classList.toggle('open')
+    if (parrent.className === 'default') {
+      parrent.className = 'open'
+    } else if (parrent.className === 'open') {
+      parrent.className = 'default'
+
+    }
   }
+
 }

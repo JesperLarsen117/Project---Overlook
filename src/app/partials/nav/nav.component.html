@@ -13,7 +13,10 @@
             <li>|</li>
             <li><a routerLink="resevation">Reservationer</a></li>
             <li>|</li>
-            <li><a routerLink="#">Login</a></li>
+            <li>
+                <a *ngIf="!checkLogin" routerLink="login">Login</a>
+                <a routerLink="mysite" *ngIf="checkLogin">Min side</a>
+            </li>
         </ul>
     </div>
     <!-- Mobile navigation -->
@@ -29,7 +32,7 @@
             <li><a routerLink="hotels">Hoteller og destinationer</a></li>
             <li><a routerLink="#">Værelser</a></li>
             <li><a routerLink="resevation">Reservationer</a></li>
-            <li><a routerLink="#">Login</a></li>
+            <li><a routerLink="login">Login</a></li>
         </ul>
     </div>
 </nav>

@@ -1,0 +1,51 @@
+<section class="header">
+    <figure>
+        <img draggable="false" src="../../../assets/images/overlook-victoria.jpg" alt="">
+    </figure>
+</section>
+<main>
+    <section class="container">
+        <article class="left">
+            <ul class="bread">
+                <li><a routerLink="/">Hotel Overlook</a></li>
+                <li><span>></span></li>
+                <li>
+                    <p>Administrer reservationer</p>
+                </li>
+            </ul>
+            <header>
+                <h2>Login</h2>
+                <p class="descript">Her kan du ændre og afbestille dine reservationer.</p>
+            </header>
+            <section class="resevations">
+                <article *ngFor="let item of resevations">
+                    <div>
+                        <p>Hotel og værelsestype</p>
+                        <h4>{{item.hotel_title}}</h4>
+                        <h4>{{item.room_title}}</h4>
+                    </div>
+                    <div>
+                        <p>Dato</p>
+                        <h4>{{item.checkin_date}}</h4>
+                        <h4>{{item.checkout_date}}</h4>
+                    </div>
+                    <div>
+                        <p>Antal personer</p>
+                        <h4>{{item.num_persons}}</h4>
+                    </div>
+                    <div>
+                        <p>Handling</p>
+                        <a class="green" href="">Rediger</a>
+                        <a class="red" (click)="deleteResevation(item.id, $event)">Afbestil</a>
+                    </div>
+                </article>
+            </section>
+        </article>
+        <article class="right">
+            <h4>Dine oplysninger</h4>
+            <p>Du er logget ind som <span>{{name}}</span></p>
+            <a routerLink="/mysite">Administrer resevationer</a>
+            <a (click)="logout()">Log ud</a>
+        </article>
+    </section>
+</main>

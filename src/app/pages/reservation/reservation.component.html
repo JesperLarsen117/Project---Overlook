@@ -20,16 +20,52 @@
                 <h2>Reserver dit foretrukne værelse</h2>
                 <p>Her kan du vælge destination, hotel og værelsestype og gennemføre din Overlook booking. </p>
             </header>
-            <form>
-                <label for="hotel">Destination/Hotel: <span class="importent">*</span></label>
-                <input type="text" placeholder="Over Grand Hotel">
+            <form [formGroup]="resevationFrom" (ngSubmit)="onSubmit()">
+                <label for="destination">Destination/Hotel: <span class="importent">*</span></label>
+                <select formControlName="destination" name="destination">
+                    <option value="1">Göteborg, Overlook Europa</option>
+                    <option value="3">Göteborg, Overlook Crown</option>
+                    <option value="4">Stockholm, Overlook Grand Central</option>
+                    <option value="5">Stockholm, Overlook Haymarket</option>
+                    <option value="6">Jönköping, Overlook Portalen</option>
+                    <option value="7">Helsinki, Overlook Grand Marina</option>
+                    <option value="8">Helsinki, Overlook Seurahuone</option>
+                    <option value="9">Rauma, Overlook</option>
+                    <option value="10">København, Overlook Webers</option>
+                    <option value="11">København, Overlook Copenhagen</option>
+                    <option value="12">Aalborg, Overlook City</option>
+                    <option value="13">Aalborg Øst, Overlook</option>
+                    <option value="14">Silkeborg, Overlook</option>
+                    <option value="15">Aarhus, Overlook The Mayor</option>
+                    <option value="16">Aarhus, Overlook City</option>
+                    <option value="17">Lillehammer, Overlook Hafjell</option>
+                    <option value="18">Lillehammer, Overlook Victoria</option>
+                    <option value="19">Oslo, Overlook Grand Hotel</option>
+                    <option value="20">Oslo, Overlook Holmenkollen Park</option>
+                    <option value="21">Tromsø, Overlook Ishavshotel</option>
+                    <option value="22">Tromsø, Overlook Grand</option>
+                    <option value="23">Berlin, Overlook Postdamer Platz</option>
+                    <option value="24">Berlin, Overlook Kurfurstendamm</option>
+                    <option value="25">Hamburg, Overlook Emporio</option>
+                    <option value="26">Frankfurt, Overlook Museumsufer</option>
+                    <option value="27">Gdansk, Overlook</option>
+                    <option value="28">Wroclaw, Overlook</option>
+                    <option value="30">Keflavik, Overlook Grand Hotel</option>
+                    <option value="31">Keflavik, Overlook Blue Lagoon</option>
+                </select>
                 <div class="roomTypeContainer">
                     <label for="roomType">Værelsestype: <span class="importent">*</span></label>
                     <label for="people"> Antal personer: <span class="importent">*</span></label>
-                    <select name="roomType" id="roomType">
-                        <option value="Superior">Superior Plus</option>
+                    <select name="roomType" formControlName="roomType" id="roomType">
+                        <option value="1">Economy</option>
+                        <option value="2">Superior</option>
+                        <option value="3">Superior Plus</option>
+                        <option value="4">Junior Suite</option>
+                        <option value="5">Presidential Suite</option>
+                        <option value="6">Standard Single</option>
+                        <option value="7">Standard</option>
                     </select>
-                    <select name="roomType" id="roomType">
+                    <select name="people" formControlName="people" id="people">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -40,11 +76,12 @@
                 <label for="priceClass">Pris klasse:</label>
                 <div class="priceClassContainer">
                     <div>
-                        <input type="radio" name="priceClass" value="1" id="priceClass">
+                        <input type="radio" formControlName="priceClass" name="priceClass" value="false"
+                            id="priceClass">
                         <p>Normal pris</p>
                     </div>
                     <div>
-                        <input type="radio" name="priceClass" value="2" id="priceClass">
+                        <input type="radio" formControlName="priceClass" name="priceClass" value="true" id="priceClass">
                         <p>Flex Pris</p>
                     </div>
                 </div>
@@ -52,17 +89,17 @@
                     <label for="checkInDate">Check-in dato: <span class="importent">*</span></label>
                     <label for="checkOutDate">Check-ud dato: <span class="importent">*</span></label>
 
-                    <input type="date" id="start" name="trip-start" value="2020-08-12" min="2020-01-01"
-                        max="2021-12-31">
-                    <input type="date" id="start" name="trip-start" value="2020-08-12" min="2020-01-01"
-                        max="2021-12-31">
+                    <input type="date" id="start" formControlName="checkin" name="trip-start" value="2020-08-12"
+                        min="2020-01-01" max="2021-12-31">
+                    <input type="date" id="start" formControlName="checkout" name="trip-start" value="2020-08-12"
+                        min="2020-01-01" max="2021-12-31">
                     <label for="surName">Fornavn: <span class="importent">*</span></label>
                     <label for="lastName">Efternavn: <span class="importent">*</span></label>
-                    <input type="text" placeholder="Indtast dit fornavn">
-                    <input type="text" placeholder="Indtast dit efternavn">
+                    <input type="text" formControlName="name" placeholder="Indtast dit fornavn">
+                    <input type="text" formControlName="lastname" placeholder="Indtast dit efternavn">
                 </div>
                 <label for="phone">Telefon: <span class="importent">*</span></label>
-                <input type="text" placeholder="Indtast dit telefornummer">
+                <input type="text" formControlName="phone" placeholder="Indtast dit telefornummer">
                 <label for="comment">Eventuelle anmodninger eller kommentarer:</label>
                 <textarea name="comment" id="comment"></textarea>
 
@@ -72,7 +109,7 @@
                         kryds).</label>
                 </div>
 
-                <button type="button">Send reservation</button>
+                <button type="submit">Send reservation</button>
                 <!-- <button type="button">Annuller</button> -->
             </form>
         </div>

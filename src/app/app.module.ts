@@ -19,6 +19,10 @@ import { CitysComponent } from './pages/citys/citys.component';
 import { SearchComponent } from './partials/search/search.component';
 import { HotelComponent } from './pages/citys/hotel/hotel.component';
 
+// Forms 
+import { ReactiveFormsModule } from '@angular/forms';
+import { MysiteComponent } from './pages/mysite/mysite.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,11 +38,14 @@ import { HotelComponent } from './pages/citys/hotel/hotel.component';
     CitysComponent,
     SearchComponent,
     HotelComponent,
+    MysiteComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

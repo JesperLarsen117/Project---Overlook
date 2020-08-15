@@ -103,7 +103,7 @@ main {
 
         .roomTypeContainer {
             display: grid;
-            grid-template-columns: 70% 30%;
+            grid-template-columns: calc(70% - 1em) 30%;
             gap: 0 1em;
 
         }
