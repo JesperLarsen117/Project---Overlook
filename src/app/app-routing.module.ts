@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'forside', component: FrontPageComponent },
   { path: 'hotels', loadChildren: () => import('./pages/hotels/hotels.module').then(m => m.HotelsModule) },
   { path: 'resevation', component: ReservationComponent },
+  { path: 'resevation/:country/:city/:hotel/:room/:flex', component: ReservationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'mysite', component: MysiteComponent },
   { path: 'search', component: DefaultSearchComponent },

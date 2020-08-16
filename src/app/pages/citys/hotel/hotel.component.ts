@@ -15,11 +15,17 @@ export class HotelComponent implements OnInit {
   roomPicture = [];
   city: any;
   activeCountry: string;
-
+  countryId: any = this.route.snapshot.routeConfig.path.split('/')[0];
+  cityId: any = this.route.snapshot.params.id
+  hotelId: any = this.route.snapshot.params.hotelId
   countrys: any;
   constructor(private http: HttpService, private route: ActivatedRoute) { }
 
   async ngOnInit(): Promise<void> {
+    console.log('-----------');
+    console.log(this.route.snapshot.params);
+    console.log('-----------');
+
     this.hotel = await this.http.getHotel(this.id).toPromise();
     this.hotel = this.hotel.item;
 
@@ -74,4 +80,113 @@ export class HotelComponent implements OnInit {
     }
   }
 
+  book(countryId, hotelId, cityId, roomId, flex) {
+    location.href = `/resevation/${countryId}/${hotelId}/${cityId}/${roomId}/${flex}`;
+  }
+
+  getCity(hotelId) {
+    switch (hotelId) {
+      case '1':
+      case '3':
+        return 1;
+      case '4':
+      case '5':
+        return 2;
+      case '6':
+        return 4;
+      case '7':
+      case '8':
+        return 5;
+      case '9':
+        return 7;
+      case '10':
+      case '11':
+        return 8;
+      case '12':
+      case '13':
+        return 11;
+      case '14':
+        return 13;
+      case '15':
+      case '16':
+        return 14;
+      case '17':
+      case '18':
+        return 15;
+      case '19':
+      case '20':
+        return 16;
+      case '21':
+      case '22':
+        return 18;
+      case '23':
+      case '24':
+        return 19;
+      case '25':
+        return 20;
+      case '26':
+        return 21;
+      case '27':
+        return 22;
+      case '28':
+        return 23;
+      case '30':
+        return 24;
+      case '31':
+        return 29;
+    }
+  }
+  getCityName(hotelId) {
+
+    switch (hotelId) {
+      case '1':
+      case '3':
+        return 'göteborg';
+      case '4':
+      case '5':
+        return 'stockholm';
+      case '6':
+        return 'jönköping';
+      case '7':
+      case '8':
+        return 'helsinki';
+      case '9':
+        return 'rauma';
+      case '10':
+      case '11':
+        return 'københavn';
+      case '12':
+      case '13':
+        return 'aalborg';
+      case '14':
+        return 'silkeborg';
+      case '15':
+      case '16':
+        return 'aarhus';
+      case '17':
+      case '18':
+        return 'lillehammer';
+      case '19':
+      case '20':
+        return 'oslo';
+      case '21':
+      case '22':
+        return 'tromsø';
+      case '23':
+      case '24':
+        return 'berlin';
+      case '25':
+        return 'hamborg';
+      case '26':
+        return 'frankfurt';
+      case '27':
+        return 'gdansk';
+      case '28':
+        return 'wroclaw';
+      case '30':
+        return 'reykjavik';
+      case '31':
+        return 'keflavik';
+    }
+  }
 }

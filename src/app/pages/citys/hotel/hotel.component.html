@@ -75,7 +75,7 @@
                                 <p><span class="from">Fra </span><span
                                         class="price">{{item.day_price_normal}}</span><span class="dkk"> DKK/nat</span>
                                 </p>
-                                <button>Book</button>
+                                <button (click)="book(countryId, cityId, hotelId, item.id, 'no')">Book</button>
                             </div>
                         </section>
                         <section class="flexContainer">
@@ -83,7 +83,7 @@
                             <p>Kan ændres eller afbestilles</p>
                             <div>
                                 <p><span class="price">{{item.day_price_flex}}</span> DKK/nat</p>
-                                <button>Book</button>
+                                <button (click)="book(countryId, cityId, hotelId, item.id, 'yes')">Book</button>
                             </div>
 
                         </section>

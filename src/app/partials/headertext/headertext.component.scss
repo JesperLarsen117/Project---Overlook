@@ -13,6 +13,10 @@
         top: 20em
     }
 
+    @media(max-width: 1300px) {
+        display: none !important;
+    }
+
     &::before {
         content: '';
         position: absolute;

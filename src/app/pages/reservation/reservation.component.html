@@ -25,6 +25,8 @@
             <form [formGroup]="resevationFrom" (ngSubmit)="onSubmit()">
                 <label for="destination">Destination/Hotel: <span class="importent">*</span></label>
                 <select formControlName="destination" name="destination">
+                    <option [ngValue]="null" disabled hidden>Vælg destination</option>
+                    <option value="1">Göteborg, Overlook Europa</option>
                     <option value="1">Göteborg, Overlook Europa</option>
                     <option value="3">Göteborg, Overlook Crown</option>
                     <option value="4">Stockholm, Overlook Grand Central</option>
@@ -59,6 +61,7 @@
                     <label for="roomType">Værelsestype: <span class="importent">*</span></label>
                     <label for="people"> Antal personer: <span class="importent">*</span></label>
                     <select name="roomType" formControlName="roomType" id="roomType">
+                        <option [ngValue]="null" disabled hidden>Vælg værelsestype</option>
                         <option value="1">Economy</option>
                         <option value="2">Superior</option>
                         <option value="3">Superior Plus</option>
@@ -68,6 +71,7 @@
                         <option value="7">Standard</option>
                     </select>
                     <select name="people" formControlName="people" id="people">
+                        <option [ngValue]="null" disabled hidden>Vælg antal personer</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>

@@ -133,7 +133,6 @@ export class FinderComponent implements OnInit {
     }
   }
   getCityName(hotelId) {
-
     switch (hotelId) {
       case '1':
       case '3':

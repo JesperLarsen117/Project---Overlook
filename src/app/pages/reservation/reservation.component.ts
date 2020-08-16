@@ -9,6 +9,7 @@ import { HttpHeaders } from "@angular/common/http";
 
 import { LoginCheckService } from 'src/app/services/login-check.service';
 import { HttpService } from 'src/app/services/http.service';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-reservation',
   templateUrl: './reservation.component.html',
@@ -16,11 +17,13 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class ReservationComponent implements OnInit {
 
-  constructor(public checkLogin: LoginCheckService, public fb: FormBuilder, private http: HttpService) { }
+  constructor(public checkLogin: LoginCheckService, public fb: FormBuilder, private http: HttpService, private route: ActivatedRoute) { }
+  hotelId = this.route.snapshot.params.hotel ? this.route.snapshot.params.hotel : null;
+  roomId = this.route.snapshot.params.room ? this.route.snapshot.params.room : null;
   resevationFrom = this.fb.group({
-    destination: ["", Validators.required],
-    roomType: ["", [Validators.required]],
-    people: ["", [Validators.required]],
+    destination: [this.hotelId, Validators.required],
+    roomType: [this.roomId, [Validators.required]],
+    people: [null, [Validators.required]],
     priceClass: ["", [Validators.required]],
     checkin: ["", [Validators.required]],
     checkout: ["", [Validators.required]],
@@ -30,6 +33,20 @@ export class ReservationComponent implements OnInit {
     comment: ["", [Validators.required]]
   });
   ngOnInit(): void {
+
+    console.log(this.route.snapshot.params);
+    setTimeout(() => {
+      const radios = document.getElementsByName('priceClass') as NodeListOf<HTMLInputElement>;
+      radios[0].checked = true;
+      if (this.route.snapshot.params.flex === "no") {
+        radios[0].checked = true;
+      } else if (this.route.snapshot.params.flex === "yes") {
+        radios[1].checked = true;
+
+      }
+    }, 200);
+
+
   }
   onSubmit() {
     const formData: any = new FormData();
