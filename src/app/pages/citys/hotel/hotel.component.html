@@ -2,6 +2,8 @@
     <figure>
         <img draggable="false" src="{{hotel.image}}" alt="">
     </figure>
+    <app-headertext Text="HOTELLER & DESTINATIONER"></app-headertext>
+
 </section>
 <main>
     <section class="countrys" *ngIf="countrys">
@@ -13,6 +15,7 @@
         <section class="left">
             <header>
                 <ul class="bread" *ngIf="city">
+                    {{city.country_name}}
                     <li><a routerLink="/">Hotel Overlook</a></li>
                     <li><span>></span></li>
                     <li><a routerLink="/hotels">Hoteller og destination</a></li>
@@ -20,7 +23,8 @@
                     <li><a routerLink="/hotels/{{(city.country_name).toLowerCase()}}">{{city.country_name}}</a>
                     </li>
                     <li><span>></span></li>
-                    <li><a routerLink="/hotels/{{(city.country_name).toLowerCase()}}/{{city.id}}">{{city.name}}</a>
+                    <li><a
+                            routerLink="/hotels/{{(city.country_name).toLowerCase()}}/{{city.id}}">{{hotel.city_name}}</a>
                     <li><span>></span></li>
                     <li>
                         <p *ngIf="hotel">{{hotel.title}}</p>

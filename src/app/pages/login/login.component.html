@@ -21,10 +21,12 @@
                 <label for="username">Brugernavn: <span>*</span></label>
                 <input type="text" autocomplete="username" placeholder="Indtast dit brugernavn"
                     formControlName="username">
+                <p class="wrong" *ngIf="f.username.invalid && f.username.touched">brugernavn er ikke rigtig</p>
                 <label for="password">Adgangskode: <span>*</span></label>
                 <input type="password" autocomplete="current-password" placeholder="Indtast din adgangskode"
                     formControlName="password">
-                <button type="submit">Login</button>
+                <p class="wrong" *ngIf="f.password.invalid && f.password.touched">Adgangskode er ikke rigtig</p>
+                <button type="submit" [disabled]="!loginForm.valid">Login</button>
                 <button>Annuller</button>
             </form>
         </article>

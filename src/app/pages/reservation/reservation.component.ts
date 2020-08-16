@@ -52,7 +52,10 @@ export class ReservationComponent implements OnInit {
       console.log(res);
       if (res.status === true) {
         console.log(res.status);
+        location.href = '/thankyou';
       }
     });
   }
+  get f() { return this.resevationFrom.controls; }
+
 }

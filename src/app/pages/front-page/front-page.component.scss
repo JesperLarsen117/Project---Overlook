@@ -6,10 +6,6 @@ main {
         width: 90%;
     }
 
-    @media(max-width: 1000px) {
-        width: 100%;
-    }
-
     section {
         h2 {
             margin: 2em 0 .5em 0;
@@ -21,6 +17,13 @@ main {
             grid-template-columns: 1fr 1fr 1fr;
             gap: 1em;
 
+            @media(max-width: 1300px) {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @media(max-width: 1000px) {
+                display: block;
+            }
 
             article {
                 width: 100%;

@@ -38,44 +38,16 @@ main {
 
         .descript {
             padding-bottom: 1em;
-            border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
         }
 
+        .left {
+            header {
+                border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
 
-        .resevations {
-            margin: 1em 0;
+            }
 
-            article {
-                padding: 1em;
-                background-color: white;
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 1em;
-                margin-bottom: 1em;
-
-                div {
-                    p {
-                        font-weight: 300;
-                    }
-
-                    h4 {
-                        font-weight: 400;
-                    }
-
-                    a {
-                        display: block;
-                        cursor: pointer;
-                        text-decoration: none;
-                    }
-
-                    .green {
-                        color: green;
-                    }
-
-                    .red {
-                        color: red;
-                    }
-                }
+            .cards {
+                margin-top: 1em;
             }
         }
 
@@ -100,6 +72,42 @@ main {
                 color: blue;
                 text-decoration: none;
                 cursor: pointer;
+            }
+
+            form {
+
+                input,
+                select {
+                    padding: .5em;
+                    border-radius: 4px;
+                    border: 1px solid #d6d4d4;
+                    box-shadow: 0 1px 0 white;
+                    display: block;
+                }
+
+                input,
+                select,
+                button {
+                    margin-bottom: 1em;
+                    margin-top: .5em;
+                }
+
+                #destination {
+                    width: 40%;
+                }
+
+                #people {
+                    width: 20%;
+                }
+
+                button {
+                    background: linear-gradient(0deg, rgba(255, 0, 0, 1) 0%, rgba(236, 0, 0, 1) 100%);
+                    padding: .7em 3em;
+                    border-radius: 4px;
+                    color: white;
+                    border: none;
+                    box-shadow: 0 2px 0 #810a0a;
+                }
             }
 
             figure {

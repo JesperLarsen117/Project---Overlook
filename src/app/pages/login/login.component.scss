@@ -29,6 +29,10 @@ main {
         gap: 4em;
         margin-bottom: 2em;
 
+        @media(max-width: 1300px) {
+            display: block;
+        }
+
         h2 {
             margin: 1em 0;
             font-weight: 400;
@@ -77,6 +81,12 @@ main {
             border-left: 1px solid rgba(0, 0, 0, 0.2);
             padding-left: 2em;
 
+            @media(max-width: 1300px) {
+                border: none;
+                margin: 1em 0;
+                padding: 0;
+            }
+
             a {
                 display: block;
                 margin: 1em 0;
@@ -113,4 +123,12 @@ main {
             color: #373535;
         }
     }
+}
+
+button:disabled {
+    opacity: .5;
+}
+
+.wrong {
+    color: red;
 }

@@ -76,6 +76,10 @@ main {
         gap: 4em;
         margin-bottom: 2em;
 
+        @media(max-width: 1300px) {
+            display: block;
+        }
+
         .left {
             .bread {
                 display: flex;
@@ -156,6 +160,12 @@ main {
         .right {
             border-left: 1px solid rgba(0, 0, 0, 0.2);
             padding-left: 2em;
+
+            @media(max-width: 1300px) {
+                border: none;
+                margin: 1em 0;
+                padding: 0;
+            }
 
             a {
                 color: #6a6af9;

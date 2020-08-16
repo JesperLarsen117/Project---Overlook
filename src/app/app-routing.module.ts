@@ -7,6 +7,9 @@ import { ReservationComponent } from './pages/reservation/reservation.component'
 import { LoginComponent } from './pages/login/login.component';
 import { MysiteComponent } from './pages/mysite/mysite.component';
 import { SearchComponent } from './pages/search/search.component';
+import { FinderComponent } from './pages/finder/finder.component';
+import { ThanksComponent } from './pages/thanks/thanks.component';
+import { DefaultSearchComponent } from './pages/default-search/default-search.component';
 
 
 const routes: Routes = [
@@ -16,7 +19,9 @@ const routes: Routes = [
   { path: 'resevation', component: ReservationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'mysite', component: MysiteComponent },
-  { path: 'search/:dest/:id', component: SearchComponent }
+  { path: 'search', component: DefaultSearchComponent },
+  { path: 'search/:dest/:id', component: FinderComponent },
+  { path: 'thankyou', component: ThanksComponent }
 ];
 
 @NgModule({

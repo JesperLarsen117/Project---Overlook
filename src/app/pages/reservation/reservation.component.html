@@ -2,6 +2,8 @@
     <figure>
         <img draggable="false" src="../../../assets/images/overlook-seurahuone.jpg" alt="header image">
     </figure>
+    <app-headertext Text="RESERVATIONER"></app-headertext>
+
 </section>
 
 <main>
@@ -109,7 +111,7 @@
                         kryds).</label>
                 </div>
 
-                <button type="submit">Send reservation</button>
+                <button type="submit" [disabled]="!resevationFrom.valid">Send reservation</button>
                 <!-- <button type="button">Annuller</button> -->
             </form>
         </div>

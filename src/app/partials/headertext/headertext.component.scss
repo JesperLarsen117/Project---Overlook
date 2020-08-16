@@ -1,0 +1,26 @@
+.headerText {
+    z-index: 1000;
+    position: absolute;
+    top: 12em;
+    left: 10%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1em 4em 1em 1em;
+    border-radius: 0 0 10em 0;
+    min-width: 600px;
+
+    @media(max-width: 1300px) {
+        top: 20em
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: -1em;
+        left: 0;
+        width: 85%;
+        height: 1em;
+        border-radius: 0 0 10em 0;
+        background-color: rgba(255, 0, 0, 0.959);
+    }
+}

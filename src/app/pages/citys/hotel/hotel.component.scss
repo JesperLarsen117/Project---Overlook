@@ -71,6 +71,10 @@ main {
         gap: 4em;
         margin-bottom: 2em;
 
+        @media(max-width: 1300px) {
+            display: block;
+        }
+
         a {
             color: #373535;
             text-decoration: none;

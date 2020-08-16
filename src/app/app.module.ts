@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 // Http
 import { HttpClientModule } from '@angular/common/http';
@@ -22,6 +23,10 @@ import { HotelComponent } from './pages/citys/hotel/hotel.component';
 // Forms 
 import { ReactiveFormsModule } from '@angular/forms';
 import { MysiteComponent } from './pages/mysite/mysite.component';
+import { FinderComponent } from './pages/finder/finder.component';
+import { HeadertextComponent } from './partials/headertext/headertext.component';
+import { ThanksComponent } from './pages/thanks/thanks.component';
+import { DefaultSearchComponent } from './pages/default-search/default-search.component';
 
 @NgModule({
   declarations: [
@@ -39,12 +44,17 @@ import { MysiteComponent } from './pages/mysite/mysite.component';
     SearchComponent,
     HotelComponent,
     MysiteComponent,
+    FinderComponent,
+    HeadertextComponent,
+    ThanksComponent,
+    DefaultSearchComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
 
   ],
   providers: [],
