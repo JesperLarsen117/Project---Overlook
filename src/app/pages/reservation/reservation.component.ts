@@ -34,8 +34,8 @@ export class ReservationComponent implements OnInit {
     roomType: [this.roomId, Validators.required],
     people: [null, Validators.required],
     priceClass: [Boolean, Validators.required],
-    checkIn: ["", Validators.required],
-    checkOut: ["", Validators.required],
+    checkIn: [Date, Validators.required],
+    checkOut: [Date, Validators.required],
     name: ["", Validators.required],
     lastname: ["", Validators.required],
     phone: ["", Validators.required],
@@ -55,20 +55,21 @@ export class ReservationComponent implements OnInit {
   }
   onSubmit() {
     const formData: any = new FormData();
+
+    let checkin = Math.round(new Date(this.resevationFrom.get('checkIn').value).getTime()/1000),
+    checkout = Math.round(new Date(this.resevationFrom.get('checkOut').value).getTime()/1000);
+
     formData.append("user_id", this.checkLogin.getCookie("user_id"));
     formData.append("hotel_id", this.resevationFrom.get("destination").value);
     formData.append("room_id", this.resevationFrom.get("roomType").value);
     formData.append("num_persons", this.resevationFrom.get("people").value);
     formData.append("is_flex", this.resevationFrom.get("priceClass").value);
-    formData.append('checkIn', (+new Date(this.resevationFrom.get('checkIn').value)/1000).toFixed(0));
-    formData.append('checkOut', (+new Date(this.resevationFrom.get('checkOut').value)/1000).toFixed(0));
+    formData.append("checkin", checkin);
+    formData.append("checkout", checkout);
     formData.append("firstname", this.resevationFrom.get("name").value);
     formData.append("lastname", this.resevationFrom.get("lastname").value);
     formData.append("email", "jesper@overlook.dk");
     formData.append("phone", this.resevationFrom.get("phone").value);
-
-    console.log((+new Date(this.resevationFrom.get('checkIn').value)/1000).toFixed(0));
-
 
     const headers = new HttpHeaders().set(
       "Authorization",
@@ -79,7 +80,7 @@ export class ReservationComponent implements OnInit {
       if (this.resevationFrom.valid) {
         if (res.status === true) {
           console.log(res.status);
-          // location.href = "/thankyou";
+          location.href = "/thankyou";
         }
       }
     });
