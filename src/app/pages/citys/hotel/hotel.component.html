@@ -1,100 +1,98 @@
 <section class="header" *ngIf="hotel">
-    <figure>
-        <img draggable="false" src="{{hotel.image}}" alt="">
-    </figure>
-    <app-headertext Text="HOTELLER & DESTINATIONER"></app-headertext>
+  <figure>
+    <img draggable="false" src="{{hotel.image}}" alt="">
+  </figure>
+  <app-headertext Text="HOTELLER & DESTINATIONER"></app-headertext>
 
 </section>
 <main>
-    <section class="countrys" *ngIf="countrys">
-        <a class="filterBtn" *ngFor="let item of countrys"
-            [class.active]="this.activeCountry === (item.name).toLowerCase()"
-            routerLink="/hotels/{{(item.name).toLowerCase()}}">{{item.name}}</a>
-    </section>
-    <section class="container">
-        <section class="left">
-            <header>
-                <ul class="bread" *ngIf="city">
-                    {{city.country_name}}
-                    <li><a routerLink="/">Hotel Overlook</a></li>
-                    <li><span>></span></li>
-                    <li><a routerLink="/hotels">Hoteller og destination</a></li>
-                    <li><span>></span></li>
-                    <li><a routerLink="/hotels/{{(city.country_name).toLowerCase()}}">{{city.country_name}}</a>
-                    </li>
-                    <li><span>></span></li>
-                    <li><a
-                            routerLink="/hotels/{{(city.country_name).toLowerCase()}}/{{city.id}}">{{hotel.city_name}}</a>
-                    <li><span>></span></li>
-                    <li>
-                        <p *ngIf="hotel">{{hotel.title}}</p>
-                    </li>
-                </ul>
-                <section *ngIf="hotel">
-                    <h2>{{hotel.title}}</h2>
-                    <p class="descript">{{hotel.description}}</p>
-                </section>
-            </header>
-            <section>
-                <article class="default" *ngFor="let item of rooms; let i = index" [attr.data-id]="item.id">
-                    <figure class="main_image">
-                        <img src="{{roomPicture[i]}}" alt="{{item.room_title}} room image">
-                    </figure>
-                    <div>
-                        <section class="top">
-                            <div>
-                                <h3>{{item.room_title}}</h3>
-                                <p class="size"><span>{{item.area}}.</span> Plads til <span>{{item.num_persons}}</span>
-                                    personer</p>
-                            </div>
-                            <div class="small_images">
-                                <figure class="smallImages" *ngFor="let pic of item.images">
-                                    <img src="{{pic.image}}" alt="">
-                                </figure>
-                            </div>
-                        </section>
-                        <p class="description">{{item.description}}</p>
-                        <div class="facilitiesContainer" *ngIf="room[item.id -1]">
-                            <section *ngFor="let type of room[item.id -1].facilities">
-                                <p *ngIf="type.category === 'Senge'">Sengetyper: {{type.title}}</p>
-                            </section>
-                            <h3 class="facilitiesHeader">Værelset er udstyret med:</h3>
-                            <section class="facilities">
-                                <div *ngFor="let type of room[item.id -1].facilities">
-                                    <p *ngIf="room[item.id -1] && type.category !== 'Senge'">
-                                        <span><i class="fas fa-check"></i></span>{{type.title}}</p>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                    <section class="booking">
-                        <section class="normalContainer">
-                            <h4>NORMAL Pris - inkl morgenmad</h4>
-                            <p class="change">Kan ikke ændres eller afbestilles</p>
-                            <div>
-                                <p><span class="from">Fra </span><span
-                                        class="price">{{item.day_price_normal}}</span><span class="dkk"> DKK/nat</span>
-                                </p>
-                                <button (click)="book(countryId, cityId, hotelId, item.id, 'no')">Book</button>
-                            </div>
-                        </section>
-                        <section class="flexContainer">
-                            <h4>FLEX Pris - inkl morgenmad</h4>
-                            <p>Kan ændres eller afbestilles</p>
-                            <div>
-                                <p><span class="price">{{item.day_price_flex}}</span> DKK/nat</p>
-                                <button (click)="book(countryId, cityId, hotelId, item.id, 'yes')">Book</button>
-                            </div>
-
-                        </section>
-                    </section>
-                    <button (click)=" expand($event)" id="ShowMore"><i class="fas fa-chevron-down"></i> Vis
-                        mere</button>
-                </article>
+  <section class="countrys" *ngIf="countrys">
+    <a class="filterBtn" *ngFor="let item of countrys" [class.active]="this.activeCountry === (item.name).toLowerCase()"
+      routerLink="/hotels/{{(item.name).toLowerCase()}}">{{item.name}}</a>
+  </section>
+  <section class="container">
+    <section class="left">
+      <header>
+        <ul class="bread" *ngIf="city">
+          {{city.country_name}}
+          <li><a routerLink="/">Hotel Overlook</a></li>
+          <li><span>></span></li>
+          <li><a routerLink="/hotels">Hoteller og destination</a></li>
+          <li><span>></span></li>
+          <li><a routerLink="/hotels/{{(city.country_name).toLowerCase()}}">{{city.country_name}}</a>
+          </li>
+          <li><span>></span></li>
+          <li><a routerLink="/hotels/{{(city.country_name).toLowerCase()}}/{{city.id}}">{{hotel.city_name}}</a>
+          <li><span>></span></li>
+          <li>
+            <p *ngIf="hotel">{{hotel.title}}</p>
+          </li>
+        </ul>
+        <section *ngIf="hotel">
+          <h2>{{hotel.title}}</h2>
+          <p class="descript">{{hotel.description}}</p>
+        </section>
+      </header>
+      <section>
+        <article class="default" *ngFor="let item of rooms; let i = index" [attr.data-id]="item.id">
+          <figure class="main_image">
+            <img src="{{roomPicture[i]}}" alt="{{item.room_title}} room image">
+          </figure>
+          <div>
+            <section class="top">
+              <div>
+                <h3>{{item.room_title}}</h3>
+                <p class="size"><span>{{item.area}}.</span> Plads til <span>{{item.num_persons}}</span>
+                  personer</p>
+              </div>
+              <div class="small_images">
+                <figure class="smallImages" *ngFor="let pic of item.images">
+                  <img src="{{pic.image}}" alt="">
+                </figure>
+              </div>
             </section>
-        </section>
-        <section class="right">
-            something
-        </section>
+            <p class="description">{{item.description}}</p>
+            <div class="facilitiesContainer" *ngIf="room[item.id -1]">
+              <section *ngFor="let type of room[item.id -1].facilities">
+                <p *ngIf="type.category === 'Senge'">Sengetyper: {{type.title}}</p>
+              </section>
+              <h3 class="facilitiesHeader">Værelset er udstyret med:</h3>
+              <section class="facilities">
+                <div *ngFor="let type of room[item.id -1].facilities">
+                  <p *ngIf="room[item.id -1] && type.category !== 'Senge'">
+                    <span><i class="fas fa-check"></i></span>{{type.title}}</p>
+                </div>
+              </section>
+            </div>
+          </div>
+          <section class="booking">
+            <section class="normalContainer">
+              <h4>NORMAL Pris - inkl morgenmad</h4>
+              <p class="change">Kan ikke ændres eller afbestilles</p>
+              <div>
+                <p><span class="from">Fra </span><span class="price">{{item.day_price_normal}}</span><span class="dkk">
+                    DKK/nat</span>
+                </p>
+                <button (click)="book(countryId, cityId, hotelId, item.id, 'no')">Book</button>
+              </div>
+            </section>
+            <section class="flexContainer">
+              <h4>FLEX Pris - inkl morgenmad</h4>
+              <p>Kan ændres eller afbestilles</p>
+              <div>
+                <p><span class="price">{{item.day_price_flex}}</span> DKK/nat</p>
+                <button (click)="book(countryId, cityId, hotelId, item.id, 'yes')">Book</button>
+              </div>
+
+            </section>
+          </section>
+          <button (click)=" expand($event)" id="ShowMore"><i class="fas fa-chevron-down"></i> Vis
+            mere</button>
+        </article>
+      </section>
     </section>
+    <section class="right">
+      something
+    </section>
+  </section>
 </main>
